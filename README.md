@@ -1,4 +1,5 @@
-## Deploying a Node.js app to Bluemix
+## Get Started with Node on Bluemix
+#### Deploying a Node app
 
 
 ### 1. Introduction
