@@ -1,11 +1,8 @@
 node_modules/
-modules/
-.env.local
 *.DS_Store
 README.md
 .github/
 .git/
 .gitignore
-.gitmodules
 logs
 *.log
