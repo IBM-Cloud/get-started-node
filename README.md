@@ -60,7 +60,7 @@ You should see "To view your app open this link in your browser: http://localhos
 
 To deploy to Bluemix, you have to setup a manifest.yml file in the root directory.
 
-You can [download one here](https://pages.github.ibm.com/rossfenrick/Getting-Started-Guides/docs/manifest.yml) or create one using the example below
+You can [download one here](https://new-console.ng.bluemix.net/get-started/docs/manifest.yml) or create one using the example below
 ```
 applications:
 - path: .
