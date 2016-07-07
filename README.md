@@ -1,6 +1,6 @@
-## Get Started with Node on Bluemix
-#### Deploy a Node.js app
-
+# Get Started with Node on Bluemix
+## Deploy a Node.js app
+[View the guide on Bluemix here](https://new-console.ng.bluemix.net/get-started/)
 
 ### 1. Introduction
 In this guide you'll take a sample to-do app and deploy it in 10 minutes. 
