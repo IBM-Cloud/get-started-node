@@ -52,11 +52,6 @@ Run the app
 ```
 node server.js
 ```
-For Windows users
-```
-node.js server.js
-```
-
 
 You should see "To view your app open this link in your browser: http://localhost:8080"
 
