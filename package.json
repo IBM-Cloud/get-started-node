@@ -18,10 +18,7 @@
         "cfenv": "1.0.x",
         "express": "3.4.x",
         "nano": "4.7.x",
-        "ports": "1.1.x",
-        "q": "1.0.x",
-        "underscore": "1.6.x",
-        "watson-developer-cloud": "^1.4.1"
+        "q": "1.0.x"
     },
     "devDependencies": {},
     "author": "",

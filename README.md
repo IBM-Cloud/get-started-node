@@ -3,7 +3,7 @@
 [View the guide on Bluemix here](https://new-console.ng.bluemix.net/get-started/)
 
 ### 1. Introduction
-In this guide you'll take a sample to-do app and deploy it in 10 minutes. 
+In this guide you'll take a sample to-do app and deploy it in 10 minutes.
 
 To complete this guide you'll need a [Bluemix account](https://console.ng.bluemix.net/registration/) and a few other things. Use these commands to check if you are properly set up. Note that your version(s) may not match exactly, but that isn't a problem.
 
@@ -72,7 +72,7 @@ applications:
 
 Change both the `name` and `host` to a single unique name of your choice. Note that the `name` will be used in your public url, ie. http://your-appname-here.mybluemix.net. If you have already created an app from the Bluemix UI but haven't pushed your code to it, you can use the same name here.
 
-The sample app is set to run locally on port 8080. When deploying to Bluemix, the port will be assigned by Cloud Foundry via a look up of the `VCAP_APP_PORT` environment variable. 
+The sample app is set to run locally on port 8080. When deploying to Bluemix, the port will be assigned by Cloud Foundry via a look up of the `VCAP_APP_PORT` environment variable.
 
 In the root directory, update line 5 of `server.js` to look up the environment variable
 ```
@@ -122,5 +122,3 @@ Running   2016-06-23 10:11:26 AM  0.0%  81.2M of 256M    82.7M of 1G
 ```
 
 **Your application is now deployed!**
-</br>
-Go to http://your-app-name.mybluemix.net to see your app live on Bluemix.
