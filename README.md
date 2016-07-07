@@ -9,25 +9,25 @@ To complete this guide you'll need a [Bluemix account](https://console.ng.bluemi
 
 [Node.js](https://nodejs.org/en/download/)
 ```
-node -v
+$ node -v
 node -v5.10.1
 ```
 
 [npm](https://www.npmjs.com/package/download)
 ```
-npm -v
+$ npm -v
 npm -v3.8.6
 ```
 
 [Git](https://git-scm.com/downloads)
 ```
-git --version
+$ git --version
 git version 2.7.4  
 ```
 
 [Cloud Foundry CLI](https://github.com/cloudfoundry/cli#downloads)
 ```
-cf -v
+$ cf -v
 cf version 6.13.0-e68ce0f-2015-10-15T22:53:29+00:00
 ```
 
