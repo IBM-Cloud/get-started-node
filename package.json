@@ -1,27 +1,24 @@
 {
-    "name": "bluemix-guide",
+    "name": "get-started-node",
     "main": "server.js",
-    "description": "Guide App",
+    "description": "An introduction to developing Node.js apps on the Bluemix platform",
     "version": "0.1.1",
     "private": false,
     "engines": {
-        "node": "0.12.*"
+        "node": "4.4.*"
     },
     "scripts": {
         "start": "node server.js"
     },
     "repository": {
         "type": "git",
-        "url": ""
+        "url": "https://github.com/IBM-Bluemix/get-started-node"
     },
     "dependencies": {
         "cfenv": "1.0.x",
-        "express": "3.4.x",
-        "nano": "4.7.x",
-        "q": "1.0.x"
+        "express": "3.4.x"
     },
-    "devDependencies": {},
-    "author": "",
+    "author": "IBM Corp",
     "contributors": [
         {
             "name": "Jake Peyser",
@@ -32,5 +29,5 @@
             "email": "twanaazi@ie.ibm.com"
         }
     ],
-    "license": "Apache License"
+    "license": "Apache-2.0"
 }
