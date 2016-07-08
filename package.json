@@ -16,6 +16,7 @@
     },
     "dependencies": {
         "cfenv": "1.0.x",
+        "underscore": "1.6.x",
         "express": "3.4.x"
     },
     "author": "IBM Corp",
