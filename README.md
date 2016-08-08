@@ -138,3 +138,5 @@ This data is collected from the `VCAP_APPLICATION` environment variable in IBM B
 ### disabling deployment tracking
 
 Deployment tracking can be disabled by removing the `require("cf-deployment-tracker-client").track();` line from the end of the `server.js` file.
+
+![Bluemix Deployments](https://deployment-tracker.mybluemix.net/stats/ea5c26737acbd97372e61ce1515e1b77/badge.svg)
