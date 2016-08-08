@@ -1,34 +1,36 @@
 {
-    "name": "get-started-node",
-    "main": "server.js",
-    "description": "An introduction to developing Node.js apps on the Bluemix platform",
-    "version": "0.1.1",
-    "private": false,
-    "engines": {
-        "node": "4.4.*"
+  "name": "get-started-node",
+  "main": "server.js",
+  "description": "An introduction to developing Node.js apps on the Bluemix platform",
+  "version": "0.1.1",
+  "private": false,
+  "engines": {
+    "node": "4.4.*"
+  },
+  "scripts": {
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/IBM-Bluemix/get-started-node"
+  },
+  "dependencies": {
+    "cf-deployment-tracker-client": "^0.1.1",
+    "cfenv": "1.0.x",
+    "express": "3.4.x",
+    "underscore": "1.6.x",
+    "cf-deployment-tracker-client": "*"
+  },
+  "author": "IBM Corp",
+  "contributors": [
+    {
+      "name": "Jake Peyser",
+      "email": "jepeyser@us.ibm.com"
     },
-    "scripts": {
-        "start": "node server.js"
-    },
-    "repository": {
-        "type": "git",
-        "url": "https://github.com/IBM-Bluemix/get-started-node"
-    },
-    "dependencies": {
-        "cfenv": "1.0.x",
-        "underscore": "1.6.x",
-        "express": "3.4.x"
-    },
-    "author": "IBM Corp",
-    "contributors": [
-        {
-            "name": "Jake Peyser",
-            "email": "jepeyser@us.ibm.com"
-        },
-        {
-            "name": "Twana Daniel",
-            "email": "twanaazi@ie.ibm.com"
-        }
-    ],
-    "license": "Apache-2.0"
+    {
+      "name": "Twana Daniel",
+      "email": "twanaazi@ie.ibm.com"
+    }
+  ],
+  "license": "Apache-2.0"
 }

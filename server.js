@@ -7,7 +7,7 @@ var options;
 var shortOptions;
 var envOptions = {};
 app.use(express.static(__dirname + '/views'));
-
+require("cf-deployment-tracker-client").track();
 
 // Guide Part 1 - loading the To-Do without Cloudant.
 app.listen(port, function() {
