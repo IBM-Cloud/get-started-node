@@ -18,8 +18,7 @@
     "cf-deployment-tracker-client": "^0.1.1",
     "cfenv": "1.0.x",
     "express": "3.4.x",
-    "underscore": "1.6.x",
-    "cf-deployment-tracker-client": "*"
+    "underscore": "1.6.x"
   },
   "author": "IBM Corp",
   "contributors": [
