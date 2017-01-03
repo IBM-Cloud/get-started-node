@@ -76,7 +76,7 @@ The sample app is set to run locally on port 8080. When deploying to Bluemix, th
 
 In the root directory, update line 5 of `server.js` to look up the environment variable
 ```
-var port = process.env.VCAP_APP_PORT || 8080;
+var port = process.env.PORT || 8080;
 ```
 
 
