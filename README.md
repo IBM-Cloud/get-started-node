@@ -70,7 +70,7 @@ applications:
   host: your-appname-here
 ```
 
-Change both the `name` and `host` to a single unique name of your choice. Note that the `name` will be used in your public url, ie. http://your-appname-here.mybluemix.net. If you have already created an app from the Bluemix UI but haven't pushed your code to it, you can use the same name here.
+Change both the `name` and `host` to a single unique name of your choice. Note that the `host` will be used in your public url, ie. http://your-appname-here.mybluemix.net. If you have already created an app from the Bluemix UI but haven't pushed your code to it, you can use the same name here.
 
 The sample app is set to run locally on port 8080. When deploying to Bluemix, the port will be assigned by Cloud Foundry via a look up of the `VCAP_APP_PORT` environment variable.
 
