@@ -31,7 +31,7 @@
     <script>
         $('#user_name').keydown(function(e) {
             if (e.which == 13) { //catch Enter key
-                $.get("/addName?user_name=" + $('#user_name').val())
+                $.get("./addName?user_name=" + $('#user_name').val())
                     .done(function(data) {
                         $('#response').html(data);
                         $('#nameInput').hide();
@@ -40,7 +40,7 @@
             }
         });
         function getNames(){
-          $.get("/getNames")
+          $.get("./getNames")
               .done(function(data) {
                   if(data.length > 0) {
                     $('#databaseNames').html("Database contents: " + JSON.stringify(data));
