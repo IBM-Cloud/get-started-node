@@ -16,20 +16,11 @@
   },
   "dependencies": {
     "cf-deployment-tracker-client": "^0.1.1",
-    "cfenv": "1.0.x",
-    "express": "3.4.x",
-    "underscore": "1.6.x"
+    "cfenv": "^1.0.4",
+    "cloudant": "^1.7.1",
+    "dotenv": "^4.0.0",
+    "express": "3.4.x"
   },
   "author": "IBM Corp",
-  "contributors": [
-    {
-      "name": "Jake Peyser",
-      "email": "jepeyser@us.ibm.com"
-    },
-    {
-      "name": "Twana Daniel",
-      "email": "twanaazi@ie.ibm.com"
-    }
-  ],
   "license": "Apache-2.0"
 }

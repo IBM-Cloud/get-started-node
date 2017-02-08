@@ -1,64 +1,54 @@
-<!doctype html>
-<html lang="en" data-framework="backbonejs">
-	<head>
-		<meta charset="utf-8">
-		<title>Get Started with Node on Bluemix</title>
-		<link rel="stylesheet" href="stylesheets/base.css">
-		<link rel="icon" href="images/bluemix-icon.png">
-	</head>
-	<body>
-    <section id="todoapp">
-        <header id="header">
-            <h1>To-Do App</h1>
-                        <input id="new-todo" placeholder="Enter a to-do task.." autofocus>
-        </header>
-        <section id="main">
-            <input id="toggle-all" type="checkbox">
-            <label for="toggle-all">Mark all as complete</label>
-            <ul id="todo-list"></ul>
-        </section>
-        <footer id="footer"></footer>
-    </section>
+<!DOCTYPE html>
+<html lang="en">
 
-    <script type="text/template2" id="item-template">
-        <div class="view">
-            <input class="toggle" type="checkbox" <%= completed ? 'checked' : '' %>>
-            <label><%- title %></label>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Hello World</title>
 
-            <button class="destroy"></button>
+    <!-- Bootstrap -->
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+    <link href="styles.css" rel="stylesheet">
+</head>
+
+<body>
+    <div class="container">
+        <h1>Welcome.</h1>
+        <div id="nameInput" class="input-group-lg center-block helloInput">
+            <p class="lead">What is your name?</p>
+            <input id="user_name" type="text" class="form-control" placeholder="name" aria-describedby="sizing-addon1" value="" />
         </div>
-        <input class="edit" value="<%- title %>">
-    </script>
+        <p id="response" class="lead text-center"></p>
 
-    <script type="text/template" id="stats-template">
-            <span id="todo-count"><strong><%= remaining %></strong> <%= remaining === 1 ? 'item' : 'items' %> left</span>
-            <ul id="filters">
-                <li>
-                    <a class="selected" href="#/">All</a>
-                </li>
-                <li>
-                    <a href="#/active">Active</a>
-                </li>
-                <li>
-                    <a href="#/completed">Completed</a>
-                </li>
-            </ul>
-            <% if (completed) { %>
-            <button id="clear-completed">Clear completed (<%= completed %>)</button>
-            <% } %>
-    </script>
+        <p id="databaseNames" class="lead text-center"></p>
+    </div>
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
-    <script src="js/base.js"></script>
-    <script src="//code.jquery.com/jquery-2.0.0.min.js"></script>
-    <script src="//cdnjs.cloudflare.com/ajax/libs/underscore.js/1.6.0/underscore-min.js"></script>
-    <script src="//cdnjs.cloudflare.com/ajax/libs/backbone.js/1.1.1/backbone-min.js"></script>
-    <script src="js/models/todo.js"></script>
-    <script src="js/collections/todos.js"></script>
-    <script src="js/views/todo-view.js"></script>
-    <script src="js/views/app-view.js"></script>
-    <script src="js/routers/router.js"></script>
-    <script src="js/app.js"></script>
-    <script src="js/watsonJS/constants.js"></script>
-    <script src="js/watsonJS/demo.js"></script>
-    </body>
+    <script>
+        $('#user_name').keydown(function(e) {
+            if (e.which == 13) { //catch Enter key
+                $.get("/addName?user_name=" + $('#user_name').val())
+                    .done(function(data) {
+                        $('#response').html(data);
+                        $('#nameInput').hide();
+                        getNames();
+                    });
+            }
+        });
+        function getNames(){
+          $.get("/getNames")
+              .done(function(data) {
+                  if(data.length > 0) {
+                    $('#databaseNames').html("Database contents: " + JSON.stringify(data));
+                  }
+              });
+          }
+          getNames();
+    </script>
+</body>
+
 </html>

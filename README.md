@@ -53,7 +53,7 @@ Run the app
 node server.js
 ```
 
-You should see "To view your app open this link in your browser: http://localhost:8080"
+You should see "To view your app open this link in your browser: http://localhost:3000"
 
 
 ### 4. Prepare the app for deployment
@@ -71,14 +71,6 @@ applications:
 ```
 
 Change both the `name` and `host` to a single unique name of your choice. Note that the `host` will be used in your public url, ie. http://your-appname-here.mybluemix.net. If you have already created an app from the Bluemix UI but haven't pushed your code to it, you can use the same name here.
-
-The sample app is set to run locally on port 8080. When deploying to Bluemix, the port will be assigned by Cloud Foundry via a look up of the `PORT` environment variable.
-
-In the root directory, update line 5 of `server.js` to look up the environment variable
-```
-var port = process.env.PORT || 8080;
-```
-
 
 ### 5. Deploy the app
 You can use the Cloud Foundry CLI to deploy apps.
