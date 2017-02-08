@@ -5,7 +5,7 @@
   "version": "0.1.1",
   "private": false,
   "engines": {
-    "node": "4.4.*"
+    "node": "4.*"
   },
   "scripts": {
     "start": "node server.js"
@@ -16,10 +16,10 @@
   },
   "dependencies": {
     "cf-deployment-tracker-client": "^0.1.1",
-    "cfenv": "^1.0.4",
+    "cfenv": "^1.0.x",
     "cloudant": "^1.7.1",
     "dotenv": "^4.0.0",
-    "express": "3.4.x"
+    "express": "^4.14.1"
   },
   "author": "IBM Corp",
   "license": "Apache-2.0"
