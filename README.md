@@ -1,18 +1,3 @@
----
-
-copyright:
-  years: 2017
-lastupdated: "2017-02-06"
-
----
-
-{:shortdesc: .shortdesc}
-{:new_window: target="_blank"}
-{:codeblock: .codeblock}
-{:pre: .pre}
-{:screen: .screen}
-{:aside: .aside}
-
 
 # Getting started with Node.js on Bluemix
 To get started, we'll take you through a sample hello world app to help you set up a development environment and deploy to Bluemix.
@@ -27,16 +12,16 @@ You'll need a [{{site.data.keyword.Bluemix}} account](https://console.ng.bluemix
 
 Now you're ready to start working with the simple Node.js *hello world* app. Clone the repository and change to the directory to where the sample app is located.
   ```
-  git clone https://github.com/IBM-Bluemix/nodejs-helloworld
+  git clone https://github.com/IBM-Bluemix/get-started-node
   ```
   {: pre}
 
   ```
-  cd nodejs-helloworld
+  cd get-started-node
   ```
   {: pre}
 
-  Peruse the files in the *nodejs-helloworld* directory to familiarize yourself with the contents.
+  Peruse the files in the *get-started-node* directory to familiarize yourself with the contents.
 
 ## 2. Run the app locally
 
@@ -62,9 +47,9 @@ To deploy to {{site.data.keyword.Bluemix_notm}}, it can be helpful to set up a m
 The manifest.yml includes basic information about your app, such as the name, how much memory to allocate for each instance and the route. In this manifest.yml **random-route: true** generates a random route for your app to prevent your route from colliding with others.  You can replace **random-route: true** with **host: myChosenHostName**, supplying a host name of your choice. [Learn more...](/docs/manageapps/depapps.html#appmanifest)
  ```
  applications:
- - name: nodejs-helloworkd
+ - name: nodejs-helloworld
    random-route: true
-   memory: 512M
+   memory: 128M
  ```
  {: codeblock}
 
@@ -140,21 +125,21 @@ Next, we'll add a NoSQL database to this application and set up the application 
 We're now going to update your local code to point to this database. We'll create a json file that will store the credentials for the services the application will use. This file will get used ONLY when the application is running locally. When running in Bluemix, the credentials will be read from the VCAP_SERVICES environment variable.
 
 1. Create a file called `vcap-local.json` in the `nodejs-helloworld` directory with the following content:
-```
-{
-  "services": {
-    "cloudantNoSQLDB": [
-      {
-        "credentials": {
-          "url":"CLOUDANT_DATABASE_URL"
-        },
-        "label": "cloudantNoSQLDB"
-      }
-    ]
+  ```
+  {
+    "services": {
+      "cloudantNoSQLDB": [
+        {
+          "credentials": {
+            "url":"CLOUDANT_DATABASE_URL"
+          },
+          "label": "cloudantNoSQLDB"
+        }
+      ]
+    }
   }
-}
-```
-{: pre}
+  ```
+  {: pre}
 
 2. Back in the Bluemix UI, select your App -> Connections -> Cloudant -> View Credentials
 
