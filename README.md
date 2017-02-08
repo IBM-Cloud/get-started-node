@@ -1,3 +1,19 @@
+---
+
+copyright:
+  years: 2017
+lastupdated: "2017-02-06"
+
+---
+
+{:shortdesc: .shortdesc}
+{:new_window: target="_blank"}
+{:codeblock: .codeblock}
+{:pre: .pre}
+{:screen: .screen}
+{:aside: .aside}
+
+
 # Getting started with Node.js on Bluemix
 To get started, we'll take you through a sample hello world app to help you set up a development environment and deploy to Bluemix.
 
@@ -139,18 +155,21 @@ We're now going to update your local code to point to this database. We'll creat
 }
 ```
 {: pre}
+
 2. Back in the Bluemix UI, select your App -> Connections -> Cloudant -> View Credentials
+
 3. Copy and paste just the `url` from the credentials to the `url` field of the `vcap-local.json` file.
+
 4. Run your application locally.
-```
-npm start  
-```
-{: pre}
+  ```
+  npm start  
+  ```
+  {: pre}
 
-View your app at: http://localhost:3000. Any names you enter into the app will now get added to the database.
+  View your app at: http://localhost:3000. Any names you enter into the app will now get added to the database.
 
-Make any changes you want and re-deploy to Bluemix!
-```
-cf push
-```
-{: pre}
+  Make any changes you want and re-deploy to Bluemix!
+  ```
+  cf push
+  ```
+  {: pre}
