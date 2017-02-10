@@ -1,5 +1,5 @@
 ---
 applications:
- - name: nodejs-helloworld
+ - name: GetStartedNode
    random-route: true
    memory: 256M
