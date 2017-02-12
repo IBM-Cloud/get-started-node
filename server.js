@@ -1,13 +1,20 @@
 var express = require("express");
 var app = express();
 var cfenv = require("cfenv");
+var bodyParser = require('body-parser')
+
+// parse application/x-www-form-urlencoded
+app.use(bodyParser.urlencoded({ extended: false }))
+
+// parse application/json
+app.use(bodyParser.json())
 
 require("cf-deployment-tracker-client").track();
 
 var mydb;
 
-app.get("/addName", function (request, response) {
-  var userName = request.query.user_name;
+app.post("/api/visitors", function (request, response) {
+  var userName = request.body.name;
   if(!mydb) {
     console.log("No database.");
     response.send("Hello " + userName + "!");
@@ -22,7 +29,7 @@ app.get("/addName", function (request, response) {
   });
 });
 
-app.get("/getNames", function (request, response) {
+app.get("/api/visitors", function (request, response) {
   var names = [];
   if(!mydb) {
     response.json(names);
@@ -32,8 +39,8 @@ app.get("/getNames", function (request, response) {
   mydb.list({ include_docs: true }, function(err, body) {
     if (!err) {
       body.rows.forEach(function(row) {
-        if(row.doc.userName)
-          names.push(row.doc.userName);
+        if(row.doc.name)
+          names.push(row.doc.name);
       });
       response.json(names);
     }
@@ -74,6 +81,8 @@ if (appEnv.services['cloudantNoSQLDB']) {
 
 //serve static file (index.html, images, css)
 app.use(express.static(__dirname + '/views'));
+
+
 
 var port = process.env.PORT || 3000
 app.listen(port, function() {
