@@ -9,10 +9,17 @@ app.use(bodyParser.urlencoded({ extended: false }))
 // parse application/json
 app.use(bodyParser.json())
 
+// Deployment tracking
 require("cf-deployment-tracker-client").track();
 
 var mydb;
 
+/* Endpoint to greet and add a new visitor to database.
+* Send a POST request to localhost:3000/api/visitors with body
+* {
+* 	"name": "Bob"
+* }
+*/
 app.post("/api/visitors", function (request, response) {
   var userName = request.body.name;
   if(!mydb) {
@@ -29,6 +36,17 @@ app.post("/api/visitors", function (request, response) {
   });
 });
 
+/**
+ * Endpoint to get a JSON array of all the visitors in the database
+ * REST API example:
+ * <code>
+ * GET http://localhost:9080/GetStartedJava/api/visitors
+ * </code>
+ *
+ * Response:
+ * [ "Bob", "Jane" ]
+ * @return An array of all the visitor names
+ */
 app.get("/api/visitors", function (request, response) {
   var names = [];
   if(!mydb) {
