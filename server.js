@@ -40,7 +40,7 @@ app.post("/api/visitors", function (request, response) {
  * Endpoint to get a JSON array of all the visitors in the database
  * REST API example:
  * <code>
- * GET http://localhost:9080/GetStartedJava/api/visitors
+ * GET http://localhost:3000/api/visitors
  * </code>
  *
  * Response:
