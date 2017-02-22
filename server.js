@@ -9,9 +9,6 @@ app.use(bodyParser.urlencoded({ extended: false }))
 // parse application/json
 app.use(bodyParser.json())
 
-// Deployment tracking
-require("cf-deployment-tracker-client").track();
-
 var mydb;
 
 /* Endpoint to greet and add a new visitor to database.
