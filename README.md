@@ -1,10 +1,10 @@
 
 # Getting started with Node.js on Bluemix
-To get started, we'll take you through a sample hello world app to help you set up a development environment and deploy to Bluemix.
+By following this guide, you'll set up a development environment, deploy an app locally and on Bluemix, and integrate a Bluemix database service in your app.
 
 ## Prerequisites
 
-You'll need a [Bluemix account](https://console.ng.bluemix.net/registration/), [Git ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://git-scm.com/downloads) [Cloud Foundry CLI ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://github.com/cloudfoundry/cli#downloads) and [Node ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://nodejs.org/en/)
+You'll need a [Bluemix account](https://console.ng.bluemix.net/registration/), [Git](https://git-scm.com/downloads) [Cloud Foundry CLI](https://github.com/cloudfoundry/cli#downloads) and [Node](https://nodejs.org/en/)
 
 ## 1. Clone the sample app
 
@@ -21,7 +21,7 @@ Now you're ready to start working with the simple Node.js *hello world* app. Clo
 
 ## 2. Run the app locally
 
-Install the dependencies listed in the [package.json ![External link icon](../../icons/launch-glyph.svg "External link icon")](https://docs.npmjs.com/files/package.json) file to run the app locally.  
+Install the dependencies listed in the [package.json](https://docs.npmjs.com/files/package.json) file to run the app locally.  
   ```
   npm install
   ```
@@ -61,13 +61,13 @@ Replace the *API-endpoint* in the command with an API endpoint from the followin
   https://api.au-syd.bluemix.net # Sydney
   ```
 
-Login to your {{site.data.keyword.Bluemix_notm}} account
+Login to your Bluemix account
 
   ```
   cf login
   ```
 
-From within the *nodejs-helloworld* directory push your app to {{site.data.keyword.Bluemix_notm}}
+From within the *nodejs-helloworld* directory push your app to Bluemix
   ```
   cf push
   ```
