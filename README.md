@@ -121,7 +121,9 @@ We're now going to update your local code to point to this database. We'll creat
 
   View your app at: http://localhost:3000. Any names you enter into the app will now get added to the database.
 
-  Make any changes you want and re-deploy to Bluemix!
+  Tip: Use [nodemon](https://nodemon.io/) to automatically restart the application when you update code.
+
+5. Make any changes you want and re-deploy to Bluemix!
   ```
   cf push
   ```
