@@ -81,17 +81,17 @@ if (appEnv.services['cloudantNoSQLDB']) {
   // Initialize database with credentials
   var cloudant = Cloudant(appEnv.services['cloudantNoSQLDB'][0].credentials);
 
+  //database name
+  var dbName = 'mydb';
+
   // Create a new "mydb" database.
-  cloudant.db.create('mydb', function(err, data) {
-    if(err) //If database already exists
-      console.log("err creating db. It might already exist.");
-      //console.log(err);
-    else
-      console.log("Created database.");
+  cloudant.db.create(dbName, function(err, data) {
+    if(!err) //err if database doesn't already exists
+      console.log("Created database: " + dbName);
   });
 
   // Specify the database we are going to use (mydb)...
-  mydb = cloudant.db.use('mydb');
+  mydb = cloudant.db.use(dbName);
 }
 
 //serve static file (index.html, images, css)
