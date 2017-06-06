@@ -11,6 +11,10 @@ app.use(bodyParser.json())
 
 var mydb;
 
+function sanitizeInput(str) {
+  return String(str).replace(/&(?!amp;|lt;|gt;)/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+}
+
 /* Endpoint to greet and add a new visitor to database.
 * Send a POST request to localhost:3000/api/visitors with body
 * {
@@ -18,7 +22,7 @@ var mydb;
 * }
 */
 app.post("/api/visitors", function (request, response) {
-  var userName = request.body.name;
+  var userName = sanitizeInput(request.body.name);
   if(!mydb) {
     console.log("No database.");
     response.send("Hello " + userName + "!");

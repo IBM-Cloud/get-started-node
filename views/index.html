@@ -29,10 +29,6 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
     <script>
-        function sanitizeInput(str) {
-            return String(str).replace(/&(?!amp;|lt;|gt;)/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
-        }
-
     	//Submit data when enter key is pressed
         $('#user_name').keydown(function(e) {
         	var name = $('#user_name').val();
@@ -42,7 +38,7 @@
 				  method: "POST",
 				  url: "./api/visitors",
 				  contentType: "application/json",
-				  data: JSON.stringify({name: sanitizeInput(name) })
+				  data: JSON.stringify({name: name })
 				})
                 .done(function(data) {
                     $('#response').html(data);
