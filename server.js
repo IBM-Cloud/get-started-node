@@ -29,7 +29,7 @@ app.post("/api/visitors", function (request, response) {
     return;
   }
   // insert the username as a document
-  mydb.insert({ "name" : userName }, function(err, body, header) {
+  mydb.insert({ "name" : request.body.name }, function(err, body, header) {
     if (err) {
       return console.log('[mydb.insert] ', err.message);
     }
@@ -59,7 +59,7 @@ app.get("/api/visitors", function (request, response) {
     if (!err) {
       body.rows.forEach(function(row) {
         if(row.doc.name)
-          names.push(row.doc.name);
+          names.push(sanitizeInput(row.doc.name));
       });
       response.json(names);
     }
