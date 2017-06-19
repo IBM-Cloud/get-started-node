@@ -11,10 +11,6 @@ app.use(bodyParser.json())
 
 var mydb;
 
-function sanitizeInput(str) {
-  return String(str).replace(/&(?!amp;|lt;|gt;)/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
-}
-
 /* Endpoint to greet and add a new visitor to database.
 * Send a POST request to localhost:3000/api/visitors with body
 * {
@@ -22,14 +18,14 @@ function sanitizeInput(str) {
 * }
 */
 app.post("/api/visitors", function (request, response) {
-  var userName = sanitizeInput(request.body.name);
+  var userName = request.body.name;
   if(!mydb) {
     console.log("No database.");
     response.send("Hello " + userName + "!");
     return;
   }
   // insert the username as a document
-  mydb.insert({ "name" : request.body.name }, function(err, body, header) {
+  mydb.insert({ "name" : userName }, function(err, body, header) {
     if (err) {
       return console.log('[mydb.insert] ', err.message);
     }
@@ -59,7 +55,7 @@ app.get("/api/visitors", function (request, response) {
     if (!err) {
       body.rows.forEach(function(row) {
         if(row.doc.name)
-          names.push(sanitizeInput(row.doc.name));
+          names.push(row.doc.name);
       });
       response.json(names);
     }
