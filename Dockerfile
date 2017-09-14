@@ -1,3 +1,8 @@
+# USAGE:
+# docker build -t getstartednode .
+# docker run -p 3000:3000 getstartednode
+# http://localhost:3000
+
 FROM ibmcom/ibmnode
 
 ADD . /app
