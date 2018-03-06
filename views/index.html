@@ -42,6 +42,7 @@
 				  data: JSON.stringify({name: name })
 				})
                 .done(function(data) {
+                    $('#response').show();
                     $('#response').html(AntiXSS.sanitizeInput(data));
                     $('#nameInput').hide();
                     getNames();
@@ -66,7 +67,16 @@
           getNames();
 
 
-    </script>
+</script>
+    <div class="container">
+        <button type="button" class="btn" onclick="showInput()">Enter another name</button>
+        <script>
+            function showInput(){
+                 $('#nameInput').show();
+                 $('#response').hide();
+            }
+        </script>
+    </div>
 </body>
 
 </html>

@@ -1,5 +1,5 @@
 ---
 applications:
  - name: GetStartedNode
-   random-route: true
+   random-route: karteu
    memory: 256M
