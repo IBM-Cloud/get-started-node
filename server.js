@@ -19,17 +19,21 @@ var mydb;
 */
 app.post("/api/visitors", function (request, response) {
   var userName = request.body.name;
+  var doc = { "name" : userName };
   if(!mydb) {
     console.log("No database.");
-    response.send("Hello " + userName + "!");
+    response.send(doc);
     return;
   }
   // insert the username as a document
-  mydb.insert({ "name" : userName }, function(err, body, header) {
+  mydb.insert(doc, function(err, body, header) {
     if (err) {
-      return console.log('[mydb.insert] ', err.message);
+      console.log('[mydb.insert] ', err.message);
+      response.send("Error");
+      return;
     }
-    response.send("Hello " + userName + "! I added you to the database.");
+    doc.database = true;
+    response.send(doc);
   });
 });
 
