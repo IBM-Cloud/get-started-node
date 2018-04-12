@@ -82,7 +82,7 @@
 				})
                 .done(function(data) {
                     if(data && data.name){
-                        if(data.database)
+                        if(data._id)
                             $('#response').html($.i18n('added_to_database', data.name));
                         else
                             $('#response').html($.i18n('hello', data.name)); 

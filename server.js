@@ -32,7 +32,7 @@ app.post("/api/visitors", function (request, response) {
       response.send("Error");
       return;
     }
-    doc.database = true;
+    doc._id = body.id;
     response.send(doc);
   });
 });
