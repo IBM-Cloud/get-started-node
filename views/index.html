@@ -61,6 +61,11 @@
 
         <p id="databaseNames" class="lead text-center"></p>
     </div>
+    <footer class="footer">
+        <div class="container">
+            <span><a href="https://console.bluemix.net/docs/tutorials/index.html" target="_blank">Looking for more tutorials?</a></span>
+        </div>
+    </footer>
 
 </body>
 
@@ -83,9 +88,9 @@
                 .done(function(data) {
                     if(data && data.name){
                         if(data._id)
-                            $('#response').html($.i18n('added_to_database', data.name));
+                            $('#response').html($.i18n('added_to_database', AntiXSS.sanitizeInput(data.name)));
                         else
-                            $('#response').html($.i18n('hello', data.name)); 
+                            $('#response').html($.i18n('hello', AntiXSS.sanitizeInput(data.name))); 
                     }
                     else {
                         $('#response').html(AntiXSS.sanitizeInput(data));
