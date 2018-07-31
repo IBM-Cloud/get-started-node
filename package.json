@@ -1,7 +1,7 @@
 {
   "name": "get-started-node",
   "main": "server.js",
-  "description": "An introduction to developing Node.js apps on the Bluemix platform, modified to support MongoDB",
+  "description": "An introduction to developing Node.js apps on the Bluemix platform",
   "version": "0.1.1",
   "private": false,
   "engines": {
