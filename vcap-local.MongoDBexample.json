@@ -1,0 +1,12 @@
+{
+  "services": {
+    "compose-for-mongodb": [
+      {
+        "credentials": {
+          "uri":"MONGODB_DATABASE_URI"
+        },
+        "label": "compose-for-mongodb"
+      }
+    ]
+  }
+}

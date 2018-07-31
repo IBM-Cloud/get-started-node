@@ -1,7 +1,7 @@
 {
   "name": "get-started-node",
   "main": "server.js",
-  "description": "An introduction to developing Node.js apps on the Bluemix platform",
+  "description": "An introduction to developing Node.js apps on the Bluemix platform, modified to support MongoDB",
   "version": "0.1.1",
   "private": false,
   "engines": {
@@ -19,7 +19,8 @@
     "cfenv": "^1.0.x",
     "cloudant": "1.9.x",
     "dotenv": "^4.0.0",
-    "express": "^4.15.x"
+    "express": "^4.15.x",
+    "mongodb": "^3.0.10"
   },
   "author": "IBM Corp",
   "license": "Apache-2.0"
