@@ -1,0 +1,31 @@
+# Update <REGISTRY> <NAMESPACE> values before use
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: get-started-node
+  labels:
+    app: get-started-node
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: get-started-node
+  template:
+    metadata:
+      labels:
+        app: get-started-node
+    spec:
+      containers:
+      - name: get-started-node
+        image: <REGISTRY>/<NAMESPACE>/myapp:v1.0.0
+        ports:
+        - containerPort: 8080
+        imagePullPolicy: Always
+        env:
+        - name: CLOUDANT_URL
+          valueFrom:
+            secretKeyRef:
+              name: cloudant
+              key: url
+              optional: true
+

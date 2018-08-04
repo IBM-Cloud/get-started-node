@@ -9,7 +9,7 @@ app.use(bodyParser.urlencoded({ extended: false }))
 // parse application/json
 app.use(bodyParser.json())
 
-var mydb;
+var cloudant, mydb;
 
 /* Endpoint to greet and add a new visitor to database.
 * Send a POST request to localhost:3000/api/visitors with body
@@ -78,19 +78,22 @@ const appEnvOpts = vcapLocal ? { vcap: vcapLocal} : {}
 
 const appEnv = cfenv.getAppEnv(appEnvOpts);
 
+// Load the Cloudant library.
+var Cloudant = require('@cloudant/cloudant');
 if (appEnv.services['cloudantNoSQLDB'] || appEnv.getService(/cloudant/)) {
-  // Load the Cloudant library.
-  var Cloudant = require('cloudant');
 
   // Initialize database with credentials
   if (appEnv.services['cloudantNoSQLDB']) {
-     // CF service named 'cloudantNoSQLDB'
-     var cloudant = Cloudant(appEnv.services['cloudantNoSQLDB'][0].credentials);
+    // CF service named 'cloudantNoSQLDB'
+    cloudant = Cloudant(appEnv.services['cloudantNoSQLDB'][0].credentials);
   } else {
      // user-provided service with 'cloudant' in its name
-     var cloudant = Cloudant(appEnv.getService(/cloudant/).credentials);
+     cloudant = Cloudant(appEnv.getService(/cloudant/).credentials);
   }
-
+} else if (process.env.CLOUDANT_URL){
+  cloudant = Cloudant(process.env.CLOUDANT_URL);
+}
+if(cloudant) {
   //database name
   var dbName = 'mydb';
 
