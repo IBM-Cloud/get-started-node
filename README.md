@@ -17,6 +17,6 @@ You'll need a [IBM Cloud account](https://console.ng.bluemix.net/registration/),
 **IBM Cloud Cloud Foundry**: [Getting started tutorial for Node.js](https://console.bluemix.net/docs/runtimes/nodejs/getting-started.html).
 
 
-**IBM Cloud Kubernetes Service**: [README-kubernetes.md]()
+**IBM Cloud Kubernetes Service**: [README-kubernetes.md](README-kubernetes.md)
 
 **IBM Cloud Private**: The starter application for IBM Cloud Private guides you through a similar process. However, instead of hosting both your service and application in the same cloud environment, you use a user-provided service. This guide shows you how to deploy your application to IBM Cloud Private and bind it to a Cloudant Database in IBM Cloud. For the complete procedure, see [Working with user-provided services and the Node.js starter app](https://www.ibm.com/support/knowledgecenter/SSBS6K_2.1.0/cloud_foundry/buildpacks/buildpacks_using_nodejsapp.html).
