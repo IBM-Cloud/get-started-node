@@ -5,7 +5,7 @@ Follow these instructions to deploy this application to a Kubernetes cluster and
 ## Download
 
 ```bash
-https://github.com/IBM-Cloud/get-started-node
+git clone https://github.com/IBM-Cloud/get-started-node
 cd get-started-node
 ```
 
