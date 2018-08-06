@@ -9,11 +9,11 @@ app.use(bodyParser.urlencoded({ extended: false }))
 // parse application/json
 app.use(bodyParser.json())
 
-let mydb;
+let mydb, cloudant;
 var vendor; // Because the MongoDB and Cloudant use different API commands, we
             // have to check which command should be used based on the database
             // vendor.
-let dbName = 'mydb';
+var dbName = 'mydb';
 
 // Separate functions are provided for inserting/retrieving content from
 // MongoDB and Cloudant databases. These functions must be prefixed by a
@@ -112,7 +112,6 @@ app.get("/api/visitors", function (request, response) {
   getAll[vendor](response);
 });
 
-
 // load local VCAP configuration  and service credentials
 var vcapLocal;
 try {
@@ -123,7 +122,6 @@ try {
 const appEnvOpts = vcapLocal ? { vcap: vcapLocal} : {}
 
 const appEnv = cfenv.getAppEnv(appEnvOpts);
-
 
 if (appEnv.services['compose-for-mongodb'] || appEnv.getService(/.*[Mm][Oo][Nn][Gg][Oo].*/)) {
   // Load the MongoDB library.
@@ -158,17 +156,20 @@ if (appEnv.services['compose-for-mongodb'] || appEnv.getService(/.*[Mm][Oo][Nn][
   vendor = 'mongodb';
 } else if (appEnv.services['cloudantNoSQLDB'] || appEnv.getService(/[Cc][Ll][Oo][Uu][Dd][Aa][Nn][Tt]/)) {
   // Load the Cloudant library.
-  var Cloudant = require('cloudant');
+  var Cloudant = require('@cloudant/cloudant');
 
   // Initialize database with credentials
   if (appEnv.services['cloudantNoSQLDB']) {
-     // CF service named 'cloudantNoSQLDB'
-     var cloudant = Cloudant(appEnv.services['cloudantNoSQLDB'][0].credentials);
+    // CF service named 'cloudantNoSQLDB'
+    cloudant = Cloudant(appEnv.services['cloudantNoSQLDB'][0].credentials);
   } else {
      // user-provided service with 'cloudant' in its name
-     var cloudant = Cloudant(appEnv.getService(/cloudant/).credentials);
+     cloudant = Cloudant(appEnv.getService(/cloudant/).credentials);
   }
-
+} else if (process.env.CLOUDANT_URL){
+  cloudant = Cloudant(process.env.CLOUDANT_URL);
+}
+if(cloudant) {
   //database name
   dbName = 'mydb';
 
