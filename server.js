@@ -13,7 +13,7 @@ let mydb, cloudant;
 var vendor; // Because the MongoDB and Cloudant use different API commands, we
             // have to check which command should be used based on the database
             // vendor.
-lvar dbName = 'mydb';
+var dbName = 'mydb';
 
 // Separate functions are provided for inserting/retrieving content from
 // MongoDB and Cloudant databases. These functions must be prefixed by a
@@ -155,6 +155,7 @@ if (appEnv.services['compose-for-mongodb'] || appEnv.getService(/.*[Mm][Oo][Nn][
 
   vendor = 'mongodb';
 } else if (appEnv.services['cloudantNoSQLDB'] || appEnv.getService(/[Cc][Ll][Oo][Uu][Dd][Aa][Nn][Tt]/)) {
+  // Load the Cloudant library.
   var Cloudant = require('@cloudant/cloudant');
 
   // Initialize database with credentials
