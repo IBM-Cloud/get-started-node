@@ -20,7 +20,7 @@ cd get-started-node
    ```sh
    docker build . -t <REGISTRY>/<NAMESPACE>/myapp:v1.0.0
    ```
-   Example: `docker build . -t registry.ng.bluemix.net/mynamespace/myapp:v1.0.0
+   Example: `docker build . -t registry.ng.bluemix.net/mynamespace/myapp:v1.0.0`
 
 4. Push the docker image to your Container Registry on IBM Cloud
 
