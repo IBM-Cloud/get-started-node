@@ -1,5 +1,8 @@
----
 applications:
- - name: GetStartedNode
-   random-route: true
-   memory: 256M
+- path: .
+  memory: 256M
+  instances: 1
+  domain: mybluemix.net
+  name: vy301-ae6-nodesample
+  host: vy301-ae6-nodesample
+  disk_quota: 1024M
