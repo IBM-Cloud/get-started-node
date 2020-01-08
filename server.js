@@ -173,11 +173,6 @@ if(cloudant) {
   //database name
   dbName = 'mydb';
 
-  cloudant.db.destroy(dbName, function(err, data) {
-    if(!err) //err if database doesn't already exists
-      console.log("Deleted database: " + dbName);
-  });
-
   // Create a new "mydb" database.
   cloudant.db.create(dbName, function(err, data) {
     if(!err) //err if database doesn't already exists
