@@ -160,7 +160,6 @@ if (appEnv.services['compose-for-mongodb'] || appEnv.getService(/.*[Mm][Oo][Nn][
 
   // Initialize database with credentials
   if (appEnv.services['cloudantNoSQLDB']) {
-    // CF service named 'cloudantNoSQLDB'
     cloudant = Cloudant(appEnv.services['cloudantNoSQLDB'][0].credentials);
   } else {
      // user-provided service with 'cloudant' in its name
@@ -170,7 +169,13 @@ if (appEnv.services['compose-for-mongodb'] || appEnv.getService(/.*[Mm][Oo][Nn][
   // Load the Cloudant library.
   var Cloudant = require('@cloudant/cloudant');
 
-  cloudant = Cloudant(process.env.CLOUDANT_URL);
+  if (process.env.CLOUDANT_IAM_API_KEY){ // IAM API key credentials
+    let cloudantURL = process.env.CLOUDANT_URL
+    let cloudantAPIKey = process.env.CLOUDANT_IAM_API_KEY
+    cloudant = Cloudant({ url: cloudantURL, plugins: { iamauth: { iamApiKey: cloudantAPIKey } } });
+  } else { //legacy username/password credentials as part of cloudant URL
+    cloudant = Cloudant(process.env.CLOUDANT_URL);
+  }
 }
 if(cloudant) {
   //database name
@@ -190,8 +195,6 @@ if(cloudant) {
 
 //serve static file (index.html, images, css)
 app.use(express.static(__dirname + '/views'));
-
-
 
 var port = process.env.PORT || 3000
 app.listen(port, function() {
