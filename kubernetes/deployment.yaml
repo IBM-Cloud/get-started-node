@@ -17,7 +17,7 @@ spec:
     spec:
       containers:
       - name: get-started-node
-        image: <REGISTRY>/<NAMESPACE>/myapp:v1.0.0
+        image: <REGISTRY>/<NAMESPACE>/myapp:v1.1.0
         ports:
         - containerPort: 8080
         imagePullPolicy: Always
@@ -27,5 +27,11 @@ spec:
             secretKeyRef:
               name: cloudant
               key: url
+              optional: true
+        - name: CLOUDANT_IAM_API_KEY
+          valueFrom:
+            secretKeyRef:
+              name: cloudant
+              key: iamApiKey
               optional: true
 

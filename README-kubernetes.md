@@ -18,14 +18,14 @@ cd get-started-node
 3. Build and tag (`-t`)the docker image by running the command below replacing REGISTRY and NAMESPACE with he appropriate values.
 
    ```sh
-   docker build . -t <REGISTRY>/<NAMESPACE>/myapp:v1.0.0
+   docker build . -t <REGISTRY>/<NAMESPACE>/myapp:v1.1.0
    ```
-   Example: `docker build . -t registry.ng.bluemix.net/mynamespace/myapp:v1.0.0`
+   Example: `docker build . -t registry.ng.bluemix.net/mynamespace/myapp:v1.1.0`
 
 4. Push the docker image to your Container Registry on IBM Cloud
 
    ```sh
-   docker push <REGISTRY>/<NAMESPACE>/myapp:v1.0.0
+   docker push <REGISTRY>/<NAMESPACE>/myapp:v1.1.0
    ```
 
 ## Deploy
@@ -39,18 +39,18 @@ cd get-started-node
 
 1. Go to the [Catalog](https://console.bluemix.net/catalog/) and create a new [Cloudant](https://console.bluemix.net/catalog/services/cloudant-nosql-db) database instance.
 
-2. Choose `Legacy and IAM` for **Authentication**
+2. Choose `IAM` for **Authentication**.
 
 3. Create new credentials under **Service Credentials** and copy value of the **url** field.
 
 4. Create a Kubernetes secret with your Cloudant credentials.
 
 ```bash
-kubectl create secret generic cloudant --from-literal=url=<URL>
+kubectl create secret generic cloudant --from-literal=url=<URL> --from-literal=iamApiKey=<IAM_API_KEY>
 ```
 Example:
 ```bash
-kubectl create secret generic cloudant --from-literal=url=https://username:passw0rdf@username-bluemix.cloudant.com
+kubectl create secret generic cloudant --from-literal=url=https://xxxxx-yyyy-zzz-eeeee-ddddddd-bluemix.cloudantnosqldb.appdomain.cloud --from-literal=iamApiKey=xxxxxx-ddd-ppppppppppp
 ```
 
 #### Create the deployment

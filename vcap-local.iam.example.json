@@ -1,0 +1,17 @@
+{
+  "services": {
+    "cloudantNoSQLDB": [
+      {
+        "credentials": {
+          "url":"CLOUDANT_DATABASE_URL",
+          "plugins": {
+            "iamauth": {
+              "iamApiKey": "CLOUDANT_DATABASE_IAM_API_KEY"
+              }
+            }
+        },
+        "label": "cloudantNoSQLDB"
+      }
+    ]
+  }
+}
