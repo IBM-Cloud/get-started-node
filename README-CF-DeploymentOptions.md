@@ -2,7 +2,7 @@
 
 ## Overview
 
-In 2021 we (announced a change)[http://ibm.biz/cf-buildpack-node-change] to the deployment of Node applications in IBM Cloud Foundry. This README supports that announcement and some details behind the mechanics of deploying using various types and versions.
+In 2021 we [announced a change](http://ibm.biz/cf-buildpack-node-change) to the deployment of Node applications in IBM Cloud Foundry. This README supports that announcement and some details behind the mechanics of deploying using various types and versions.
 
 
 ## Technical Details
