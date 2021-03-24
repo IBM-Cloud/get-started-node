@@ -22,7 +22,7 @@ It is possible to deploy with specific buildpack information in several ways
 
 ## Deploying a specific buildpack type
 
-### CLI METHOD
+### CLI Deployment
 ```
 > ibmcloud cf  push -b sdk-for-nodejs
 ```
@@ -44,21 +44,21 @@ You may need to make adjustments depending on how you deploy your Node applicati
 
 ### Use Case #1: Your application doesn't specify Node version type
 
-Method: The application specifies no buildpack version type or Node version
-Change: No change needed
-Result: It deploys with the default Node version type in the system
+Method: The application specifies no buildpack version type or Node version \
+Change: No change needed \ 
+Result: It deploys with the default Node version type in the system \
 
 ### Use Case #2: Your application specifies in the IBM Node buildpack type specifically
 
-Condition: The application specifies the node version type (listed above)
-Change: 
-Phase 1: You can continue to specify the IBM version "sdk-for-nodejs"
-Phase 2: You can no longer specify the IBM version.
-Result: Your application deploys properly
+Condition: The application specifies the node version type (listed above) \
+Change: \
+Phase 1: You can continue to specify the IBM version "sdk-for-nodejs" \
+Phase 2: You can no longer specify the IBM version. \
+Result: Your application deploys properly \
 
 ### Use Case #3: Your application specifies the specific Node version 
 
-Condition: If your package.json file specifies a specific version, especially as that version starts to age
+Condition: If your package.json file specifies a specific version, especially as that version starts to age \
 
 Example: 
 ```
@@ -66,11 +66,11 @@ Example:
 "node":  "8.16.0"
 }
 ```
-### Change: Those older versions will no longer be auto-downloaded once we switch over to the Open Source Node.js buildpack
-Phase 1: You can continue to specify the IBM version "sdk-for-nodejs" in your deployment CLI
-Phase 2: You can no longer specify the IBM version - you can specify an older Node version if you really need to, but you'll need to use the `Git URL with a branch or tag` method.  
-Result: Your application deploys properly
+Change: Those older versions will no longer be auto-downloaded once we switch over to the Open Source Node.js buildpack \
+Phase 1: You can continue to specify the IBM version "sdk-for-nodejs" in your deployment CLI \
+Phase 2: You can no longer specify the IBM version - you can specify an older Node version if you really need to, but you'll need to use the `Git URL with a branch or tag` method.  \
+Result: Your application deploys properly \
 
-## Deplopyent Changes
+## Deplopment Changes
 
 If you specify an older version of the Node buildpack, or an included sub-package depends on an older version, in Phase 2 you will have to have made the changes to support the new versions.
