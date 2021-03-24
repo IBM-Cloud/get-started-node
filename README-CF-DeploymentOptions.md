@@ -71,6 +71,6 @@ Phase 1: You can continue to specify the IBM version "sdk-for-nodejs" in your de
 Phase 2: You can no longer specify the IBM version - you can specify an older Node version if you really need to, but you'll need to use the `Git URL with a branch or tag` method.  \
 Result: Your application deploys properly 
 
-## Deplopment Changes
+## Deployment Changes
 
 If you specify an older version of the Node buildpack, or an included sub-package depends on an older version, in Phase 2 you will have to have made the changes to support the new versions.
