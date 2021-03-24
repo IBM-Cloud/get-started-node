@@ -61,10 +61,11 @@ Result: Your application deploys properly
 Condition: If your package.json file specifies a specific version, especially as that version starts to age
 
 Example: 
+```
 "engines": {
 "node":  "8.16.0"
 }
-
+```
 ### Change: Those older versions will no longer be auto-downloaded once we switch over to the Open Source Node.js buildpack
 Phase 1: You can continue to specify the IBM version "sdk-for-nodejs" in your deployment CLI
 Phase 2: You can no longer specify the IBM version - you can specify an older Node version if you really need to, but you'll need to use the `Git URL with a branch or tag` method.  
