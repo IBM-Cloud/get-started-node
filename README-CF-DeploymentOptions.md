@@ -45,7 +45,7 @@ You may need to make adjustments depending on how you deploy your Node applicati
 ### Use Case #1: Your application doesn't specify Node version type
 
 Method: The application specifies no buildpack version type or Node version \
-Change: No change needed \ 
+Change: No change needed \
 Result: It deploys with the default Node version type in the system 
 
 ### Use Case #2: Your application specifies in the IBM Node buildpack type specifically
