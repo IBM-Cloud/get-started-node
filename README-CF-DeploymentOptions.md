@@ -23,8 +23,9 @@ It is possible to deploy with specific buildpack information in several ways
 ## Deploying a specific buildpack type
 
 ### CLI METHOD
+```
 > ibmcloud cf  push -b sdk-for-nodejs
-
+```
 ### Git URL with a branch or tag
 If you still want older hard coded versions of the Open Source Node.js buildpack, you can specify them on your deployment command line, even after Phase 2 is complete.  
 Find the node.js buildpack release that contains the runtime version you need in the Node.js buidpack release notes (https://github.com/cloudfoundry/nodejs-buildpack/releases) and specify the release on the cf push.  
@@ -34,8 +35,9 @@ Example: You want Node version 8.16.0 that exists in Node buildpack v1.6.56  - 
 Specify the version of the Node.js buildpack on the command line and the version in the runtime in your package.json file, and you're set to deploy and build.
 
 Example
+```
 > ibmcloud push -b https://github.com/cloudfoundry/nodejs-buildpack.git#v1.6.56 
-
+```
 ## Deployment Use Cases
 
 You may need to make adjustments depending on how you deploy your Node applications in IBM Cloud Foundry, and they may be different in each phase.
