@@ -20,13 +20,13 @@ Two buildpack related details can optionally be specified when deploying Node ap
 
 It is possible to deploy with specific buildpack information in several ways
 
-## Deploying a specific buildpack type
+### Deploying a specific buildpack type
 
-### CLI Deployment
+#### CLI Deployment
 ```
 > ibmcloud cf  push -b sdk-for-nodejs
 ```
-### Git URL with a branch or tag
+#### Git URL with a branch or tag
 If you still want older hard coded versions of the Open Source Node.js buildpack, you can specify them on your deployment command line, even after Phase 2 is complete.  
 Find the node.js buildpack release that contains the runtime version you need in the Node.js buidpack [release notes](https://github.com/cloudfoundry/nodejs-buildpack/releases) and specify the release on the cf push.  
 
@@ -52,8 +52,8 @@ Result: It deploys with the default Node version type in the system
 
 Condition: The application specifies the node version type (listed above) \
 Change: \
-  Phase 1: You can continue to specify the IBM version "sdk-for-nodejs" \
-  Phase 2: You can no longer specify the IBM version. \
+&nbsp;&nbsp;&nbsp;&nbsp; Phase 1: You can continue to specify the IBM version "sdk-for-nodejs" \
+&nbsp;&nbsp;&nbsp;&nbsp; Phase 2: You can no longer specify the IBM version. \
 Result: Your application deploys properly 
 
 ### Use Case #3: Your application specifies the specific Node version 
@@ -67,8 +67,8 @@ Example:
 }
 ```
 Change: Those older versions will no longer be auto-downloaded once we switch over to the Open Source Node.js buildpack \
-  Phase 1: You can continue to specify the IBM version "sdk-for-nodejs" in your deployment CLI \
-  Phase 2: You can no longer specify the IBM version - you can specify an older Node version if you really need to, but you'll need to use the `Git URL with a branch or tag` method.  \
+ &nbsp;&nbsp;&nbsp;&nbsp; Phase 1: You can continue to specify the IBM version "sdk-for-nodejs" in your deployment CLI \
+ &nbsp;&nbsp;&nbsp;&nbsp; Phase 2: You can no longer specify the IBM version - you can specify an older Node version if you really need to, but you'll need to use the `Git URL with a branch or tag` method. \
 Result: Your application deploys properly 
 
 ## Deployment Changes
