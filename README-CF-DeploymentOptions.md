@@ -18,7 +18,7 @@ Two buildpack related details can optionally be specified when deploying Node ap
 
 ## Deployment Examples
 
-It is possible to deploy with specific buildpack information in several ways
+It is possible to deploy with specific buildpack information in several ways.
 
 ### Deploying a specific buildpack type
 
@@ -68,7 +68,7 @@ Example:
 ```
 Change: Those older versions will no longer be auto-downloaded once we switch over to the Open Source Node.js buildpack \
  &nbsp;&nbsp;&nbsp;&nbsp; Phase 1: You can continue to specify the IBM version "sdk-for-nodejs" in your deployment CLI \
- &nbsp;&nbsp;&nbsp;&nbsp; Phase 2: You can no longer specify the IBM version - you can specify an older Node version if you really need to, but you'll need to use the `Git URL with a branch or tag` method. \
+ &nbsp;&nbsp;&nbsp;&nbsp; Phase 2: You can no longer specify the IBM version - you can specify an older Node version if you really need to, but you'll need to use the [Git URL with a branch or tag](#Git-URL-with-a-branch-or-tag) method. \
 Result: Your application deploys properly 
 
 ## Deployment Changes
