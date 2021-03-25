@@ -1,4 +1,4 @@
-# Cloud Foundry Deployment Options
+# IBM Cloud Node.js Application Deployment Options
 
 ## Overview
 
