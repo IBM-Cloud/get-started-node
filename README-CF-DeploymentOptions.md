@@ -48,7 +48,7 @@ Method: The application specifies no buildpack version type or Node version \
 Change: No change needed \
 Result: It deploys with the default Node version type in the system 
 
-### Use Case #2: Your application specifies in the IBM Node buildpack type specifically
+### Use Case #2: Your application specified the IBM Node buildpack type specifically
 
 Condition: The application specifies the node version type (listed above) \
 Change: \
