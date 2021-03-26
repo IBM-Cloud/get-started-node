@@ -30,9 +30,9 @@ It is possible to deploy with specific buildpack information in several ways.
 If you still want older hard coded versions of the Open Source Node.js buildpack, you can specify them on your deployment command line, even after Phase 2 is complete.  
 Find the node.js buildpack release that contains the runtime version you need in the Node.js buidpack [release notes](https://github.com/cloudfoundry/nodejs-buildpack/releases) and specify the release on the cf push.  
 
-You will need to know the exact runtime version you want, and what version of Node buildpack has that Node version. 
+You will need to know the exact runtime version you want and the version of Node.js buildpack that contains that Node.js runtime version. 
 
-Example: You want Node version 8.16.0 that exists in Node buildpack v1.6.56  - so the buildpack for that would be https://github.com/cloudfoundry/nodejs-buildpack.git#v1.6.56.
+Example: You want Node.js runtime version 8.16.0 that exists in Node.js buildpack v1.6.56  - searching the release notes you find the buildpack that contains runtime version 8.16.0 is https://github.com/cloudfoundry/nodejs-buildpack.git#v1.6.56.
 Specify the version of the Node.js buildpack on the command line and the version in the runtime in your package.json file, and you're set to deploy and build.
 
 Example
