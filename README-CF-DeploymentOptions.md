@@ -13,7 +13,7 @@ You can see these using the command `ibmcloud cf buildpacks | grep -i node`
 
 Two buildpack related details can optionally be specified when deploying Node.js applications:
 
-* a which Node.js buildpack to use (listed above) - this can be specified on the CLI
+* a which Node.js buildpack to use (listed above) - this can be specified on the CLI or manifest.yml file.  
 * a specific version of the Node.js engine - this can only be specified in the package.json file
 
 ## Deployment Examples
@@ -41,6 +41,11 @@ Specify the version of the Node.js buildpack on the command line and the version
 Example
 ```
 > ibmcloud cf push -b https://github.com/cloudfoundry/nodejs-buildpack.git#v1.6.56 
+```
+```
+applications:
+- buildpacks:
+    - https://github.com/cloudfoundry/nodejs-buildpack.git#v1.6.56 
 ```
 ## Deployment Use Cases
 
