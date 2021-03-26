@@ -13,7 +13,7 @@ You'll need a [IBM Cloud account](https://console.ng.bluemix.net/registration/),
 
 ## Instructions
 
-**IBM Cloud Cloud Foundry**: [Getting started tutorial for Node.js](https://cloud.ibm.com/docs/cloud-foundry?topic=cloud-foundry-getting-started-node).
+**IBM Cloud Cloud Foundry**: [Getting started tutorial for Node.js](https://cloud.ibm.com/docs/cloud-foundry-public?topic=cloud-foundry-public-getting-started-node).
 
 
 **IBM Cloud Kubernetes Service**: [README-kubernetes.md](README-kubernetes.md)
