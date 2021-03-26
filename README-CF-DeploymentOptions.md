@@ -40,7 +40,7 @@ Specify the version of the Node.js buildpack on the command line and the version
 
 Example
 ```
-> ibmcloud push -b https://github.com/cloudfoundry/nodejs-buildpack.git#v1.6.56 
+> ibmcloud cf push -b https://github.com/cloudfoundry/nodejs-buildpack.git#v1.6.56 
 ```
 ## Deployment Use Cases
 
