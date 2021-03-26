@@ -7,20 +7,20 @@ In 2021 we [announced a change](http://ibm.biz/cf-buildpack-node-change) to the 
 
 ## Technical Details
 
-In IBM Cloud Foundry, the Node.js buildpack types have different names: "sdk-for-nodejs" for the IBM Node.js buildpack and "nodejs_buildpack" for the Open Source Node.js buildpack.
+In IBM Cloud Foundry, the Node.js buildpacks have different names: "sdk-for-nodejs" for the IBM Node.js buildpack and "nodejs_buildpack" for the Open Source Node.js buildpack.
 
 You can see these using the command `ibmcloud cf buildpacks | grep -i node`
 
 Two buildpack related details can optionally be specified when deploying Node.js applications:
 
-* a type of the buildpack to use (listed above) - this can be specified on the CLI
+* a which Node.js buildpack to use (listed above) - this can be specified on the CLI
 * a specific version of the Node.js engine - this can only be specified in the package.json file
 
 ## Deployment Examples
 
 It is possible to deploy with specific buildpack information in several ways:
 
-### Deploying a specific buildpack type
+### Deploying a specific buildpack
 
 #### CLI Deployment
 This specifies a specific Node.js buildpack that is already installed on the Cloud Foundry server.
@@ -46,9 +46,9 @@ Example
 
 You may need to make adjustments depending on how you deploy your Node.js applications in IBM Cloud Foundry, and they may be different in each phase.
 
-### Use Case #1: Your application doesn't specify Node.js version or buildpack type
+### Use Case #1: Your application doesn't specify Node.js version or buildpack
 
-Method: The application specifies no buildpack version type or Node.js version \
+Method: The application specifies no buildpack version or Node.js version \
 Change: No change needed and your application is deployed using the default Node.js buildpack.
 
 ### Use Case #2: Your application specifies the IBM Node buildpack
