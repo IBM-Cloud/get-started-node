@@ -76,4 +76,3 @@ Example in package.json
 Change: Those older Node.js versions will no longer be auto-downloaded once the default switch to Open Source Node.js buildpack \
  &nbsp;&nbsp;&nbsp;&nbsp; Phase 1: You can continue to specify the IBM buildpack "sdk-for-nodejs" in your deployment CLI \
  &nbsp;&nbsp;&nbsp;&nbsp; Phase 2: You can no longer specify the IBM buildpack - you can specify an older Node version if you really need to, but you'll need to use the [Git URL with a branch or tag](#Git-URL-with-a-branch-or-tag) method. 
-
