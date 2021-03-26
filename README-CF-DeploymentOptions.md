@@ -2,7 +2,7 @@
 
 ## Overview
 
-In 2021 we [announced a change](http://ibm.biz/cf-buildpack-node-change) to the deployment of Node applications in IBM Cloud Foundry. This README supports that announcement with some details behind the mechanics of deploying and using various types of Node.js buildpacks and Node.js runtime versions.
+In 2021 we [announced a change](http://ibm.biz/cf-buildpack-node-change) to the deployment of Node.js applications in IBM Cloud Foundry. This README supports that announcement with some details behind the mechanics of deploying and using various types of Node.js buildpacks and Node.js runtime versions.
 
 
 ## Technical Details
@@ -11,7 +11,7 @@ In IBM Cloud Foundry, the Node.js buildpack types have different names:  "sdk-fo
 
 You can see these using the command `ibmcloud cf buildpacks | grep -i node`
 
-Two buildpack related details can optionally be specified when deploying Node applications:
+Two buildpack related details can optionally be specified when deploying Node.js applications:
 
 * a type of the buildpack to use (listed above) - this can be specified on the CLI
 * a specific version of the Node.js engine - this can only be specified in the package.json file
@@ -45,21 +45,21 @@ Example
 
 You may need to make adjustments depending on how you deploy your Node.js applications in IBM Cloud Foundry, and they may be different in each phase.
 
-### Use Case #1: Your application doesn't specify Node version type
+### Use Case #1: Your application doesn't specify Node.js version or buildpack type
 
-Method: The application specifies no buildpack version type or Node version \
-Change: No change needed \
+Method: The application specifies no buildpack version type or Node.js version \
+Change: No change needed and your application is deployed using the default Node.js buildpack and Node.js version.  
 
 ### Use Case #2: Your application specifies the IBM Node buildpack specifically
 
 Method: The application specifies the node version type (listed above) \
 Change: \
 &nbsp;&nbsp;&nbsp;&nbsp; Phase 1: You can continue to specify the IBM buildpack "sdk-for-nodejs" \
-&nbsp;&nbsp;&nbsp;&nbsp; Phase 2: You can no longer specify the IBM buildpack, but the other methods of deployment and specifying specific Node.js versions are availalbe to you. \
+&nbsp;&nbsp;&nbsp;&nbsp; Phase 2: You can no longer specify the IBM buildpack, but the other methods of deployment and specifying specific Node.js versions are availalbe to you.
 
 ### Use Case #3: Your application specifies the specific Node version 
 
-Condition: If your package.json file specifies a specific version, especially as that version starts to age \
+Condition: If your package.json file specifies a specific version, especially as that version starts to age 
 
 Example in package.json
 ```
@@ -69,5 +69,5 @@ Example in package.json
 ```
 Change: Those older Node.js versions will no longer be auto-downloaded once the default switch to Open Source Node.js buildpack \
  &nbsp;&nbsp;&nbsp;&nbsp; Phase 1: You can continue to specify the IBM buildpack "sdk-for-nodejs" in your deployment CLI \
- &nbsp;&nbsp;&nbsp;&nbsp; Phase 2: You can no longer specify the IBM buildpack - you can specify an older Node version if you really need to, but you'll need to use the [Git URL with a branch or tag](#Git-URL-with-a-branch-or-tag) method. \
+ &nbsp;&nbsp;&nbsp;&nbsp; Phase 2: You can no longer specify the IBM buildpack - you can specify an older Node version if you really need to, but you'll need to use the [Git URL with a branch or tag](#Git-URL-with-a-branch-or-tag) method. 
 
