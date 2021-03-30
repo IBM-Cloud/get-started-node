@@ -15,7 +15,7 @@ During phase 1 of the change, the list of the Node.js buildpacks may show some w
 
 ## How to control which buildpack is used and which Node.js engine version is used
 
-When deploying your application, you need to use a buildpack that provides the Node.js engine version that your application can use. Therefore it's important to know how to control which buildpack is used, and how to specify which Node.js engine version we well. The very simplest case, that is sufficient for many users, is just to allow this to happen automatically with the latest versions installed into the IBM Cloud Foundry service. If your application is more sensitive to specific Node.js engine version though, you may wish to override this. Below is an explanation on the different options:
+When deploying your application, you need to use a buildpack that provides the Node.js engine version that your application can use. Therefore it's important to know how to control which buildpack is used, and how to specify which Node.js engine version as well. The very simplest case, that is sufficient for many users, is just to allow this to happen automatically with the latest versions installed into the IBM Cloud Foundry service. If your application is more sensitive to specific Node.js engine version though, you may wish to override this. Below is an explanation on the different options:
 
 ### Using the automatic default
 
@@ -71,7 +71,7 @@ Example in package.json
   "node":  "8.16.0"
 }
 ```
-Change: The IBM Node.js buildpack has a feature to automatically download older Node.js engine versions. The Open Source Node.js buildpack does not do this and instead requires you to use and older version of the buildpack if you want older Node.js engine support. Therefore as we switch from the IBM Node.js buildpack to the Open Source Node.js buildpack in phase 1 and phase 2, you may have to change your deployment technique to match because those older Node.js engine versions will no longer be auto-downloaded \
+Change: The IBM Node.js buildpack has a feature to automatically download older Node.js engine versions. The Open Source Node.js buildpack does not do this and instead requires you to use an older version of the buildpack if you want older Node.js engine support. Therefore as we switch from the IBM Node.js buildpack to the Open Source Node.js buildpack in phase 1 and phase 2, you may have to change your deployment technique to match because those older Node.js engine versions will no longer be auto-downloaded \
  &nbsp;&nbsp;&nbsp;&nbsp; Phase 1: The simplest option is that you can continue to use the IBM buildpack "sdk-for-nodejs" in your deployment by using one of the specific buildpack techniques that we described earlier. For example you could update your push command to use "-b sdk-for-nodejs". However please note this is just a quick temporary solution that will only succeed during phase 1. It's recommended that you instead tackle the phase 2 approach as soon as possible \
  &nbsp;&nbsp;&nbsp;&nbsp; Phase 2: In phase 2, the IBM buildpack will no longer be available. In this case you must start using the new approach of using a specific version of the Open Source buildpack that provides your specific Node.js engine. This is easily done though as this example shows:
 
