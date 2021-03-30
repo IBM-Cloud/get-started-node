@@ -42,12 +42,12 @@ Example: You want to use Open Source Node.js buildpack version v1.6.56 so the pu
 
 #### Specify the buildpack name or URL within the manifest file
 
-As an alternative to using the push command line, you can instead specify the buildpack by name or URL inside the manifest file instead as described in [App Manifest Attribute Reference] (https://docs.cloudfoundry.org/devguide/deploy-apps/manifest-attributes.html#buildpack).
+As an alternative to using the push command line, you can instead specify the buildpack by name or URL inside the manifest file instead as described in [App Manifest Attribute Reference](https://docs.cloudfoundry.org/devguide/deploy-apps/manifest-attributes.html#buildpack).
 
 
 ## Migration scenarios
 
-As phase 1 and phase 2 of the migration from IBM to Open Source Node.js buildpacks processed, you may need to make adjustments depending on how you deploy your Node.js applications in IBM Cloud Foundry, and they may be different in each phase. The above information provided general information on how you can accomplish control on what Node.js buildpacks are used, and which Node.js engines they in turn support. Below is some information on how you can use that knowledge to tackle some migration scenarios.
+As phase 1 and phase 2 of the migration from IBM to Open Source Node.js buildpacks proceed, you may need to make adjustments depending on how you deploy your Node.js applications in IBM Cloud Foundry, and they may be different in each phase. The above information provided general information on how you can accomplish control on what Node.js buildpacks are used, and which Node.js engines they in turn support. Below is some information on how you can use that knowledge to tackle some migration scenarios.
 
 ### Use Case #1: Your application doesn't specify Node.js version or buildpack
 
