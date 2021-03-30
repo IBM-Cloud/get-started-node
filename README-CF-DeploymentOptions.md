@@ -56,9 +56,9 @@ As phase 1 and phase 2 of the migration from IBM to Open Source Node.js buildpac
 
 ### Use Case #2: Your application specifies the IBM Node buildpack name but no Node.js engine version
 
-**Method**: The application specifies the IBM Node.js buildpack (listed above) \
-**Change**: \
-  - Phase 1: You can continue to specify the IBM buildpack "sdk-for-nodejs" \
+**Method**: The application specifies the IBM Node.js buildpack (listed above) 
+**Change**: 
+  - Phase 1: You can continue to specify the IBM buildpack "sdk-for-nodejs" 
   - Phase 2: You can no longer specify the IBM buildpack, but the other methods of deployment and specifying specific Node.js versions are availalbe to you.
 
 ### Use Case #3: Your application specifies the Node.js engine version 
@@ -71,8 +71,8 @@ Example in package.json
   "node":  "8.16.0"
 }
 ```
-**Change**: Those older Node.js versions will no longer be auto-downloaded once the default switch to Open Source Node.js buildpack \
-  - Phase 1: You can continue to specify the IBM buildpack "sdk-for-nodejs" in your deployment CLI \
+**Change**: Those older Node.js versions will no longer be auto-downloaded once the default switch to Open Source Node.js buildpack 
+  - Phase 1: You can continue to specify the IBM buildpack "sdk-for-nodejs" in your deployment CLI 
   - Phase 2: You can no longer specify the IBM buildpack - you can specify an older Node version if you really need to, but you'll need to use the [Git URL with a branch or tag](#Git-URL-with-a-branch-or-tag) method. 
 
 Example: Your application specifies Node.js engine version 8.16.0 in the package.json, which is older than the installed Open Source Node.js buildpack provdes. Therefore you need to specify an older version of the Open Source Node.js buildpack manually, to get the older 8.16.0 engine support.
