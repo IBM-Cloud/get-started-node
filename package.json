@@ -4,9 +4,6 @@
   "description": "An introduction to developing Node.js apps on the IBM Cloud platform",
   "version": "0.2.0",
   "private": false,
-  "engines": {
-    "node": "10.*"
-  },
   "scripts": {
     "start": "node server.js"
   },
