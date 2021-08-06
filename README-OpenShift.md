@@ -4,7 +4,7 @@ Follow these instructions to deploy this application to Red Hat OpenShift and co
 
 ## Create an OpenShift cluster
 
-1. If you don't have one already, [creating an OpenShift cluster on the IBM Cloud](https://cloud.ibm.com/docs/openshift?topic=openshift-getting-started#vpc-gen2-gs).
+1. If you don't have one already, [create an OpenShift cluster on the IBM Cloud](https://cloud.ibm.com/docs/openshift?topic=openshift-getting-started#vpc-gen2-gs).
 2. Follow the instructions in [Installing the OpenShift CLI](https://cloud.ibm.com/docs/openshift?topic=openshift-openshift-cli) to set up your `oc` CLI.
 3. Choose (and if necessary create) a namespace for the application
 
