@@ -67,7 +67,7 @@ oc expose svc/get-started-node
 If, and when, you want to remove the application:
 
 ```shell
-oc delete deployment,route -l app=get-started-node
+oc delete deployment,route,service,buildconfig,imagestream -l app=get-started-node
 oc delete secret cloudant
 ```
 
